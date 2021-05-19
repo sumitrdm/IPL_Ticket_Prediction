@@ -119,9 +119,8 @@ Data.findOne({name:re1},function(err,result1)
  });
 
 
-
-
-app.listen(3000,function()
-{
-  console.log("server started on port no. 3000");
-});
+ const port = process.env.PORT;
+ if (port == null || port == "") {
+   port = 3000;
+ }
+ app.listen(port);
